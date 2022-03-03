@@ -1,6 +1,6 @@
 {% macro centralize_test_failures(results) %}
-  {# --add "{{ centralize_test_failures(results) }}" to an on-run-end: block in dbt_project.yml #}
-  {# --run with dbt build --store-failures. The next v.1.0.X release of dbt will include post run hooks for dbt test! #}
+  -- {# --add "{{ centralize_test_failures(results) }}" to an on-run-end: block in dbt_project.yml #}
+  -- {# --run with dbt build --store-failures. The next v.1.0.X release of dbt will include post run hooks for dbt test! #}
   {%- set test_results = [] -%}
   {%- for result in results -%}
     {%- if result.node.resource_type == 'test' and result.status != 'skipped' and (
