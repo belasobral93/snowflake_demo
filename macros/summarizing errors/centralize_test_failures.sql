@@ -19,7 +19,7 @@
   create or replace table {{ central_tbl }} as (
   
   {% for result in test_results %}
-    
+    {% do log("LOG - CENTRAL TABLE - TARGET SCHEMA" + target.schema, info=true) %}
     select
       '{{ result.node.name }}' as test_name,
       '{{ result.node.unique_id }}' as model_name,
@@ -42,6 +42,7 @@
           * 
         from {{ central_tbl }}
         where false
+      {% do log("LOG - HISTORICAL TABLE - TARGET SCHEMA" + target.schema, info=true) %}
       );
 
     insert into {{ history_tbl }} 
