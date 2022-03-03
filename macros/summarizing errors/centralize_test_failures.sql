@@ -19,9 +19,11 @@
   create or replace table {{ central_tbl }} as (
   
   {% for result in test_results %}
-    
+      {% do log("RESULT" + result, info=true) %}
+
     select
       '{{ result.node.name }}' as test_name,
+      {% do log("TESTING_NAME" + result.node.name, info=true) %}
       '{{ result.node.unique_id }}' as model_name,
       object_construct_keep_null(*) as test_failures_json,
       current_timestamp as _timestamp
