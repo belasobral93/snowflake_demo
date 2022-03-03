@@ -19,7 +19,6 @@
   create or replace table {{ central_tbl }} as (
   
   {% for result in test_results %}
-      {% do log("RESULT" + result, info=true) %}
 
     select
       '{{ result.node.name }}' as test_name,
