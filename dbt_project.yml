@@ -34,7 +34,7 @@ on-run-start:
 on-run-end:
   - "alter warehouse transforming set warehouse_size=xsmall;"
   - "{{ grant_all_on_schemas(schemas, 'transformer') }}"
-  - "{{ centralize_test_failures(results) }}"
+  # - "{{ centralize_test_failures(results) }}"
 
 vars:
   start_date: '1999-01-01'
