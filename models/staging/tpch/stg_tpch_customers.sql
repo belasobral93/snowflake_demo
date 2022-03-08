@@ -4,7 +4,7 @@ with source as (
 
 ),
 
-renameds as (
+renamedz as (
 
     select
     
@@ -21,4 +21,4 @@ renameds as (
 
 )
 
-select * from renameds
+select * from renamedz
