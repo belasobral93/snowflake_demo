@@ -22,7 +22,6 @@
 
     select
       SUBSTR('{{ result.node.name }}', 1, 10)  as test_name,
-      {% do log("TESTING_NAME" + result.node.name, info=true) %}
       '{{ result.node.unique_id }}' as model_name,
       object_construct_keep_null(*) as test_failures_json,
       current_timestamp as _timestamp
