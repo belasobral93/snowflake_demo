@@ -1,3 +1,5 @@
+{{ config(schema='target_test') }}
+
 with source as (
 
     select * from {{ source('tpch', 'customer') }}
