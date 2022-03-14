@@ -49,6 +49,7 @@ models:
   tpch:
     staging:
       +materialized: view
+      +schema: tpch
 
     marts:
       core:
