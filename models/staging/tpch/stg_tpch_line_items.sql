@@ -4,7 +4,9 @@ with source as (
 
 ),
 
+
 renamesa as (
+
 
     select
     
@@ -34,3 +36,4 @@ renamesa as (
 )
 
 select * from renamesa
+
