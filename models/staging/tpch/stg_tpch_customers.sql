@@ -6,7 +6,8 @@ with source as (
 
 ),
 
-renameds as (
+
+renamedz as (
 
     select
     
@@ -25,4 +26,8 @@ renameds as (
 
 )
 
-select * from renameds
+select * from renamedz
+
+{% do log("this is schema  "+schema, info=true) %}
+{% do log("this is target.schema "+ target.schema, info=true) %}
+

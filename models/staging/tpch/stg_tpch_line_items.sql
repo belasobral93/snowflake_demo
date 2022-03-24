@@ -4,7 +4,9 @@ with source as (
 
 ),
 
-renameypoo as (
+
+renamesa as (
+
 
     select
     
@@ -33,4 +35,5 @@ renameypoo as (
 
 )
 
-select * from renameypoo
+select * from renamesa
+
