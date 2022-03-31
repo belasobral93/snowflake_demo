@@ -25,7 +25,7 @@ fill_in_date_gaps as (
         PARTITION BY O_ORDERKEY
 		order by DBT_VALID_FROM
 	) as next_date
-    from unioned_ordered
+    from unioned
 )
 
 select *
