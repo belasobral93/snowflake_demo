@@ -9,8 +9,8 @@
     leading_commas = false
 ) }}
 
-{{ codegen.generate_source(
-    schema_name = 'tpch_sf001',
-    generate_columns = true
-) }}
+-- {{ codegen.generate_source(
+--     schema_name = 'tpch_sf001',
+--     generate_columns = true
+-- ) }}
 
