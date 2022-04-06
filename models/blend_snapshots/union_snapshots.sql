@@ -19,7 +19,7 @@ unioned_ordered as (
     select * from unioned order by O_ORDERKEY,DBT_VALID_FROM
 ),
 
-fill_in_date_gaps as (
+fill_in_date_gapz as (
     select *,
 	LEAD(DBT_VALID_FROM, 1) OVER (
         PARTITION BY O_ORDERKEY
@@ -29,7 +29,7 @@ fill_in_date_gaps as (
 )
 
 select *
-from fill_in_date_gaps
+from fill_in_date_gapz
 
 
 
