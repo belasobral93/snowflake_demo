@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_tpch_customers
-    description: staging layer for customers dato
+    description: lol staging layer for customers dato
     columns:
       - name: customer_key
         description: primary key of the model
