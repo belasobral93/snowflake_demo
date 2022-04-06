@@ -1,4 +1,3 @@
-{{ config(schema='target_test') }}
 
 with source as (
 

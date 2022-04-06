@@ -31,9 +31,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 #   - "alter warehouse transforming set warehouse_size=small;"
 #   - '{{create_udfs()}}' # comment / uncomment this line to build UDFs called in the create_udfs macro
 
-# on-run-end:
-#   - "alter warehouse transforming set warehouse_size=xsmall;"
-#   - "{{ grant_all_on_schemas(schemas, 'transformer') }}"
+on-run-end:
+  - "alter warehouse transforming set warehouse_size=xsmall;"
+  - "{{ grant_all_on_schemas(schemas, 'transformer') }}"
 #   # - "{{ centralize_test_failures(results) }}"
 
 vars:
@@ -49,7 +49,6 @@ models:
   tpch:
     staging:
       +materialized: view
-      +schema: tpch
 
     marts:
       core:
