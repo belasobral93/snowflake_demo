@@ -1,8 +1,8 @@
 {{ config(schema='DEVELOPMENT',materialized='table') }}
-with source as (
+with delta as (
 
     select * from {{ source('tpch', 'orders') }}
 
 )
 
-select * from source
+select * from delta

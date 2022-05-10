@@ -1,4 +1,4 @@
-{{ config(schema='DEVELOPMENT',materialized='table') }}
+{{ config(materialized='table') }}
 with source as (
 
     select * from {{ source('tpch', 'orders') }}
