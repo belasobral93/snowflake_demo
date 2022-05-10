@@ -1,0 +1,1 @@
+select * from {{ source('source_fresher_demo', 'stg_tpch_orders') }}
