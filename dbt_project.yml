@@ -27,13 +27,14 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "dbt_modules"
     - "dbt_packages"
 
-# on-run-start:
+on-run-start:
+    - "select current_timestamp;"
 #   - "alter warehouse transforming set warehouse_size=small;"
 #   - '{{create_udfs()}}' # comment / uncomment this line to build UDFs called in the create_udfs macro
 
-# on-run-end:
-#   - "alter warehouse transforming set warehouse_size=xsmall;"
-#   - "{{ grant_all_on_schemas(schemas, 'transformer') }}"
+on-run-end:
+  - "alter warehouse transforming set warehouse_size=xsmall;"
+  - "{{ grant_all_on_schemas(schemas, 'transformer') }}"
 #   # - "{{ centralize_test_failures(results) }}"
 
 vars:
@@ -45,13 +46,12 @@ vars:
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
 models:
-  
   tpch:
     staging:
       +materialized: view
-      +schema: tpch
 
     marts:
+      +required_tests: {"unique.*|not_null": 1}
       core:
         materialized: table
   
