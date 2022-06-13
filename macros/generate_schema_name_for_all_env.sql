@@ -8,7 +8,7 @@
     node: The node the schema is being generated for
 
 #}
-{% macro generate_schema_name_for_env(custom_schema_name, node) -%}
+{% macro generate_schema_name_for_all_env(custom_schema_name, node) -%}
 
     {%- set default_schema = target.schema -%}
     {%- if (target.name == 'prod' or target.name == 'qa') and custom_schema_name is not none -%}
