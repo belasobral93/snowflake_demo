@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: admin_source
+    database: SA_ISABELA_1
+    schema: DEVELOPMENT
+    tables:
+      - name: stg_tpch_parts
+      - name: stg_tpch_suppliers
+      - name: stg_tpch_part_suppliers
