@@ -2,3 +2,9 @@ version: 2
 
 models:
   - name: part_suppliers
+    columns:
+        - name: part_supplier_key
+          description: primary key of the models
+          tests:
+            - unique
+            - not_null
