@@ -1,13 +1,13 @@
 
 with orders as (
     
-    select * from {{ source('admin_source', 'stg_tpch_orders') }}
+    select * from {{ source('admin_source_1', 'stg_tpch_orders') }}
 
 ),
 
 line_item as (
 
-    select * from {{ source('admin_source', 'stg_tpch_line_items') }}
+    select * from {{ source('admin_source_1', 'stg_tpch_line_items') }}
 
 )
 select 
