@@ -7,4 +7,3 @@ models:
           description: primary key of the models
           tests:
             - unique
-            - not_null
