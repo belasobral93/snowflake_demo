@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: admin_source
+  - name: admin_source_1
     database: SA_ISABELA_1
     schema: DEVELOPMENT
     tables:
