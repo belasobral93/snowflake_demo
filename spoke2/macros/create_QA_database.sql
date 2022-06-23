@@ -2,7 +2,7 @@
 
     {%- if target.name == 'qa' -%}
 
-       create database QA_{{env_var('DBT_CLOUD_PR_ID')}};
+       create database QA_{{env_var('DBT_ENV')}};
 
     {%- endif -%}
 
