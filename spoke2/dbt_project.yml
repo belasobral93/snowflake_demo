@@ -24,7 +24,7 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-# on-run-start: "{{ create_qa_database() }}"
+on-run-start: "{{ create_qa_database() }}"
 
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
