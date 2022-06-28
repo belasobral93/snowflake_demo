@@ -31,5 +31,5 @@ on-run-start: "{{ create_qa_database() }}"
 # using the `{{ config(...) }}` macro.
 models:
   spoke2:
-    # +database: QA_{{env_var('DBT_ENV')}}
+    +database: QA_{{env_var('DBT_ENV')}}
     # +database: QA_{{env_var('DBT_CLOUD_PR_ID')}}
