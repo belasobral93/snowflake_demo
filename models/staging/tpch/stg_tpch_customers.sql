@@ -1,3 +1,8 @@
+{{
+    config(
+        schema='ci_test'
+    )
+}}
 
 with source as (
 
