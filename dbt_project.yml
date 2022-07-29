@@ -49,7 +49,7 @@ vars:
 models:
   tpch:
     staging:
-      +materialized: view
+      +materialized: table
 
     marts:
       +required_tests: {"unique.*|not_null": 1}
