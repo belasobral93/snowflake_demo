@@ -29,6 +29,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 on-run-start:
     - "select current_timestamp;"
+    # - "{{ create_qa_database() }}"
 #   - "alter warehouse transforming set warehouse_size=small;"
 #   - '{{create_udfs()}}' # comment / uncomment this line to build UDFs called in the create_udfs macro
 

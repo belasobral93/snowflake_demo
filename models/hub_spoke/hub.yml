@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: hub
+    config:
+      database: BELA_DEV_HUB
+
