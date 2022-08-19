@@ -2,4 +2,4 @@
 --For my role I can only see one clerk value - if I switch roles I can see all values. 
 
 
-select o_orderkey, o_orderdate, o_clerk from {{ source('dev', 'raw_source_orders') }} 
+select o_orderkey, o_orderdate, o_clerk from {{ source('pii', 'raw_source_orders') }} 

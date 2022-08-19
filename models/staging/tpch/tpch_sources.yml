@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: dev
+  - name: pii
     database: sa_isabela_1
     schema: development
     tables:

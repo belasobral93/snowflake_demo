@@ -11,6 +11,14 @@
 ---------------------------------------
 
 
-select * from {{ source('dev', 'raw_source_customers') }}
+
+
+
+
+
+
+
+
+select * from {{ source('pii', 'raw_source_customers') }}
 
 
