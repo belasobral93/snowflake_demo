@@ -5,7 +5,7 @@
 
     Arguments:
     custom_schema_name: The custom schema name specified for a model, or none
-    node: The node the schema is being generated for
+    node: The node the schema is being generated for a
 
 #}
 {% macro generate_schema_name_for_all_env(custom_schema_name, node) -%}

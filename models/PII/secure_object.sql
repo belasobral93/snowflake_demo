@@ -1,3 +1,11 @@
+--materializing the entire stg_tpch_customers view object in a PII specific schema only certain roles have access to 
+
+{{
+    config(
+        schema='PII'
+    )
+}}
+
 with source as (
 
     select * from {{ source('tpch', 'customer') }}
@@ -5,7 +13,7 @@ with source as (
 ),
 
 
-renamez as (
+renamed as (
 
     select
     
@@ -24,10 +32,7 @@ renamez as (
 
 )
 
-select * from renamez
-
-{% do log("this is schema  "+schema, info=true) %}
-{% do log("this is target.schema "+ target.schema, info=true) %}
+select * from renamed
 
 
 
