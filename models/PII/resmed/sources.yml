@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: secure
+    database: sa_isabela_1
+    schema: development
+    tables:
+      - name: us
+
