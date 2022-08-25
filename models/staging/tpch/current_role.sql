@@ -1,1 +1,1 @@
-select current_role()
+select current_role() as current_role
