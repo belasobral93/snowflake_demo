@@ -6,4 +6,11 @@ sources:
     schema: development
     tables:
       - name: us
+  - name: resmed
+    database: sa_isabela_1
+    schema: development
+    tables:
+      - name: source_secure_customers
+        tags: ['secure']
+    
 

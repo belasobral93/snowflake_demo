@@ -1,1 +1,0 @@
-select * from {{ ref('ods_us_stage') }}
