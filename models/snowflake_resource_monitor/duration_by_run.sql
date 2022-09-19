@@ -1,4 +1,4 @@
-select dbt_run_id, sum(total_elapsed_time) as total_run_duration
+select dbt_run_id, sum(total_elapsed_time) as total_run_durationz
 from {{ ref('inc_query_logs') }}
 where dbt_run_id not in ('not_set', 'not set')
 group by 1
