@@ -4,4 +4,6 @@ where dbt_run_id = '{{ env_var("DBT_CLOUD_RUN_ID", "manual") }}'
 group by 1
 order by dbt_run_id desc
 
-{{ log("RUN ID IS " + '{{ env_var("DBT_CLOUD_RUN_ID"}}', info = true) }}
+{%- set central_tbl -%} '{{ env_var("DBT_CLOUD_RUN_ID", "manual") }}' {%- endset -%}
+
+{{ log(central_tbl, info = true) }}
