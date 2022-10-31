@@ -7,7 +7,6 @@
     )
 }}
 
-
 select start_time::date as dt, * 
 from {{ ref('stg_query_logs') }}
 {% if is_incremental() %}
