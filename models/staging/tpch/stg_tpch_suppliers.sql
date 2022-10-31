@@ -1,4 +1,9 @@
-{{ config(materialized='table') }}
+{{
+    config(
+        schema='staging'
+    )
+}}
+
 
 with source as (
 
