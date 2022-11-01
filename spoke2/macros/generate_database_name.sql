@@ -1,7 +1,7 @@
 {% macro generate_database_name(custom_database_name, node) -%}
 
     {%- set default_database = target.database -%}
-    {%- if (target.name == 'qa') and custom_database_name is not none -%}
+    {%- if (target.name == 'default') and custom_database_name is not none -%}
 
         {{ custom_database_name | trim }}
 

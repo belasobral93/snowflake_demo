@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: part_suppliers
+  - name: part_suppliers_spoke
     columns:
         - name: part_supplier_key
           description: primary key of the models
