@@ -30,7 +30,7 @@ models:
     staging: 
       +database: SA_ISABELA_1
       +schema: STAGING
-  
+    #Define this here to ensure models aren't being duplicated in dev schema.
   spoke2:
     +persist_docs:
       relation: True
