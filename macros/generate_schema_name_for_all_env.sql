@@ -9,16 +9,18 @@
 
 #}
 {% macro generate_schema_name_for_all_env(custom_schema_name, node) -%}
+    {% for cust_id in var("cust_id") %}
 
-    {%- set default_schema = target.schema -%}
-    {%- if (target.name == 'prod' or target.name == 'default') and custom_schema_name is not none -%}
+        {%- set default_schema = target.schema -%}
+        {%- if (target.name == 'prod' or target.name == 'ls') -%}
 
-        {{ custom_schema_name | trim }}
+            {{ default_schema }}_{{ var("cust_id") }}
 
-    {%- else -%}
+        {%- else -%}
 
-        {{ default_schema }}
+            {{ default_schema }}
 
-    {%- endif -%}
+        {%- endif -%}
+    {% endfor %}
 
 {%- endmacro %}

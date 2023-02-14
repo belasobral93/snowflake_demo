@@ -1,3 +1,5 @@
+{% for cust_id in var("cust_id") %}
+
 with source as (
 
     select * from {{ source('tpch', 'orders') }}
@@ -16,7 +18,8 @@ renamed as (
         o_orderpriority as priority_code,
         o_clerk as clerk_name,
         o_shippriority as ship_priority,
-        o_comment as comment
+        o_comment as comment,
+        {{ var("cust_id") }}
 
     from source
 
@@ -39,3 +42,6 @@ select * from renamed
 union all
 select * from fresher_rows
 order by order_date desc
+
+{% endfor %}
+

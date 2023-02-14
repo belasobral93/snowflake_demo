@@ -1,5 +1,4 @@
 {% macro set_query_tag() -%}
-  {# --TODO: extend this for tests once new test PR is merged #}
 
   {# -- These are built in dbt Cloud environment variables you can leverage to better understand your runs usage data #}
   {% set dbt_job_id = env_var('DBT_CLOUD_JOB_ID', 'not set') %}
