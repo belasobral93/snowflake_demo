@@ -1,1 +1,0 @@
-select current_role() as current_role
