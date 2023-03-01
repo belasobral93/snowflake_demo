@@ -9,8 +9,6 @@
 
 #}
 {% macro generate_schema_name_for_all_env(custom_schema_name, node) -%}
-    {% for cust_id in var("cust_id") %}
-
         {%- set default_schema = target.schema -%}
         {%- if (target.name == 'prod' or target.name == 'ls') -%}
 
@@ -19,8 +17,6 @@
         {%- else -%}
 
             {{ default_schema }}
-
         {%- endif -%}
-    {% endfor %}
 
 {%- endmacro %}
