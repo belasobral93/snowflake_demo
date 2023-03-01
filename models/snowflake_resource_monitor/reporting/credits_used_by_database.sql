@@ -8,4 +8,4 @@ select database_name,
        execution_time,
        credits_used
 from   {{ref('incr_query_logs')}}
-where start_time > (select dateadd(week, -1, current_date()));
+where start_time > (select dateadd(week, -1, current_date()))
