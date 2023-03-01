@@ -14,7 +14,7 @@
         {%- set default_schema = target.schema -%}
         {%- if (target.name == 'prod' or target.name == 'ls') -%}
 
-            {{ default_schema }}_{{ var("cust_id") }}
+            {{ custom_schema_name }}
 
         {%- else -%}
 
