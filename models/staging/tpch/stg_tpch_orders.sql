@@ -1,3 +1,6 @@
+{{ config(schema='marketing') }}
+
+
 with source as (
 
     select * from {{ source('tpch', 'orders') }}
@@ -17,7 +20,6 @@ renamed as (
         o_clerk as clerk_name,
         o_shippriority as ship_priority,
         o_comment as comment
-
     from source
 
 ),
@@ -39,3 +41,4 @@ select * from renamed
 union all
 select * from fresher_rows
 order by order_date desc
+

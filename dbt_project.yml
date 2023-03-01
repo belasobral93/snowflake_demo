@@ -32,14 +32,19 @@ on-run-end:
   - "alter warehouse transforming set warehouse_size=xsmall;"
   - "{{ grant_all_on_schemas(schemas, 'transformer') }}"
   - "{{ centralize_test_failures(results) }}"
+  - "{{ dbt_artifacts.upload_results(results) }}"
 
 vars:
   start_date: '1999-01-01'
   test: 'false' # to trigger runs for unit testing - override in a CLI param in testing job
   fct_order_items: 'mock_source__fct_order_items' # this is a map for unit testing
   run_duration_limit: '60'
+  cust_id:
+    - 15
+    - 19
   vars:
   'dbt_date:time_zone': 'America/Los_Angeles'
+
 
 
 
