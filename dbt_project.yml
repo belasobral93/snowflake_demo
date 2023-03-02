@@ -54,6 +54,8 @@ vars:
 models:
   tpch:
     staging:
+      +pre-hook:
+        - " {{ clone_inc_job(from_db='SA_ISABELA_1', from_schema='PRODUCTION') }} "
       +tags: spoke
       +materialized: view
 
