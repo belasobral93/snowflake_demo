@@ -11,7 +11,7 @@
                 {%- if from_relation.is_table -%}
                 -- CLONING DDL
                 create or replace transient table {{ target.database }}.{{ generate_schema_name(custom_schema_name = node.config.schema, node = node.name) }}.{{ node.name }} clone {{ from_db }}.{{ from_schema }}.{{ node.name }};
-                {% do log("Cloned incremental model " ~ from_db ~ "." ~ from_schema ~ "." ~ node.name ~ " into target schema.", info=true) %}
+                {% do log("Cloned incremental model " ~ from_db ~ "." ~ from_schema ~ "." ~ node.name ~ " into target schema", info=true) %}
                 
                 {%- endif -%}
             {%- endif -%}
