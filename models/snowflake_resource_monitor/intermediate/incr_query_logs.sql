@@ -14,4 +14,4 @@ from {{ ref('stg_query_logs') }}
 where start_time > (select max(start_time) from {{this}} )
 -- where start_time::date > (select max(dt) from {{this}} )
 {% endif %}
-order by dt desc
+Order by dt desc
