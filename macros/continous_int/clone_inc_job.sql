@@ -2,7 +2,7 @@
 
 {%- if execute -%}
 
-    {%- if target.name == 'continuous_integration' and model.config.materialized == 'incremental' -%}
+    {%- if target.name == 'default' and model.config.materialized == 'incremental' -%}
 
         {%- for node in graph.nodes.values() -%}
             {%- if node.resource_type == 'model' -%}

@@ -3,7 +3,8 @@
         materialized='incremental',
         unique_key='query_id',
         incremental_strategy='delete+insert',
-        on_schema_change='sync_all_columns'
+        on_schema_change='sync_all_columns',
+        pre_hook=" {{ clone_inc_job(from_db='SA_ISABELA_1', from_schema='PRODUCTION') }} "
     )
 }}
 
