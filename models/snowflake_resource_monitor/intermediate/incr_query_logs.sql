@@ -8,10 +8,10 @@
     )
 }}
 
-select start_time::date as dt, * 
+select start_time::date as dts, * 
 from {{ ref('stg_query_logs') }}
 {% if is_incremental() %}
 where start_time > (select max(start_time) from {{this}} )
 -- where start_time::date > (select max(dt) from {{this}} )
 {% endif %}
-Order by dt desc
+Order by dts desc
