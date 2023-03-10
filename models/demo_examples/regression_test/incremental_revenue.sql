@@ -7,5 +7,6 @@
 
 select year, total_revenue
 from {{ ref("data_source_revenue") }}
+order by year
 
 {% if is_incremental() %} where true {% endif %}
