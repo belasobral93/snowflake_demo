@@ -10,7 +10,7 @@ renamesa as (
 
     select
     
-        {{ dbt_utils.surrogate_key(
+        {{ dbt_utils.generate_surrogate_key(
             ['l_orderkey', 
             'l_linenumber']) }}
                 as order_item_key,
