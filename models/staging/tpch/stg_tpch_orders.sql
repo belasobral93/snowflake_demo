@@ -1,4 +1,4 @@
-{{ config(schema='operations') }}
+{{ config(schema='marketing') }}
 
 
 with source as (
