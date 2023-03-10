@@ -1,7 +1,7 @@
 {{
     config(
         materialized = 'view',
-        tags = ['finance']
+        tags = ['marketing']
     )
 }}
 

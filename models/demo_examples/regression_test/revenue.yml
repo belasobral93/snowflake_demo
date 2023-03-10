@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: incremental_revenue
+    columns:
+      - name: year
+        tests:
+          - unique
