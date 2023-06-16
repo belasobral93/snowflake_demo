@@ -1,5 +1,3 @@
-{{ config(schema='marketing') }}
-
 
 with source as (
 
@@ -7,34 +5,22 @@ with source as (
 
 ),
 
-renamed as (
+rename as (
 
     select
     
-    
+        o_orderkey as order_key,
+        o_custkey as customer_key,
+        o_orderstatus as status_code,
+        o_totalprice as total_price,
+        o_orderdate as order_date,
         o_orderpriority as priority_code,
         o_clerk as clerk_name,
         o_shippriority as ship_priority,
         o_comment as comment
+
     from source
 
-),
-
-fresher_rows as (
-    select 
-        12345 as order_key,
-        54321 as customer_key,
-        'F' as status_code,
-        100 as total_price,
-        CURRENT_TIMESTAMP as order_date,
-        '1_URGENT' as priority_code,
-        'CLERK55' as clerk_name,
-        0 as ship_priority,
-        'source_fresh_demo' as comment
 )
 
-select * from renamed
-union all
-select * from fresher_rows
-order by order_date desc
-
+select * from rename

@@ -19,14 +19,14 @@ region as (
     select * from {{ ref('stg_tpch_regions') }}
 
 ),
-finals as (
+final as (
     select 
         customer.customer_key,
         customer.name,
         customer.address,
-        {# nation.nation_key as nation_key, #}
+        nation.nation_key as nation_key,
         nation.name as nation,
-        {# region.region_key as region_key, #}
+        region.region_key as region_key,
         region.name as region,
         customer.phone_number,
         customer.account_balance,
@@ -41,6 +41,6 @@ finals as (
 select 
     *
 from
-    finals
+    final
 order by
     customer_key
