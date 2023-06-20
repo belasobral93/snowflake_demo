@@ -1,8 +1,4 @@
-{{
-    config(
-        schema='staging'
-    )
-}}
+
 
 with source as (
 
