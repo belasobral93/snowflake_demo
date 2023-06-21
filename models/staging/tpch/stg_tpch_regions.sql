@@ -4,7 +4,7 @@ with source as (
 
 ),
 
-renamed as (
+rename as (
 
     select
         r_regionkey as region_key,
@@ -15,4 +15,4 @@ renamed as (
 
 )
 
-select * from renamed
+select * from rename
