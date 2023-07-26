@@ -1,8 +1,8 @@
 {{ config(materialized='table') }}
-with source as (
+with sources as (
 
     select * from {{ source('tpch', 'orders') }}
 
 )
 
-select * from source
+select * from sources
