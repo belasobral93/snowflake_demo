@@ -1,1 +1,2 @@
-select * from {{ ref('cross_project_source','dim_customers') }}
+
+select * from {{ ref('cross_project_source', 'dim_customers') }}
