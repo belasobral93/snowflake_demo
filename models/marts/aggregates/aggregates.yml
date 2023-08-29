@@ -13,3 +13,15 @@ models:
     columns:
       - name: order_year
         description: year of the order
+
+  - name: monthly_gross_revenue
+    columns:
+      - name: order_month
+        tests:
+          - unique
+      - name: gross_revenue
+        tests:
+          - dbt_expectations.expect_column_sum_to_be_between:
+              name: expect_sum_bw_4500_and_100000
+              min_value: 4500 
+              max_value: 100000 
